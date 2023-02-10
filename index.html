@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>iCubo</title>
 </head>
 <!--
@@ -18,7 +18,7 @@
 
 -->
 
-<body style="background-color: #F2F2F2; margin: 0px;">
+<body >
 
     <div class="barraNav" id="navegador"  >
         <div class="navBloques">
@@ -112,14 +112,31 @@
                 />
             </div>
             <div class="descripcionBloque">
-                iCubo cuenta con:
-                - 5 botones, 3 con sonido y 2 silenciosos
-                - 1 joystick
-                - 1 interruptor con sonido
-                - 3 ruedas sin sonido
-                - 1 boton esferico
-                - 1 interruptor
-                - 1 muesca de relajación
+                <div class="seccionTitulo">
+                    ¿Con qué cuenta iCubo?
+                </div>
+                <div class="listaComposicion">
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Botones con sonido y sin sonido</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion"> Rueda giratoria</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Bola roll-on y ruletas</span>
+                    </div>
+                </div>
+                <div class="listaComposicion">
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Joystick 360 grados</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Interruptor con sonido</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Relieve relajante para respiracion</span>
+                    </div>
+                </div>
             </div>
             <div class="descripcionBloque" id="opiniones">
                 <div class="seccionTitulo" id="opinionesTitulo">
@@ -145,6 +162,10 @@
                     <div>
                         $19,000
                     </div>
+                </div>
+                <div id="barraCarraProgresoDonaciones">
+                    <div class="barraProgreso" id="barraCompletado"></div>
+                    <div class="barraProgreso" id="barraPendiente"></div>
                 </div>
                 <div class="itemsDonaciones">
                     X Donaciones
