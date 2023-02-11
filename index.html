@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js"></script>
     <link rel="stylesheet" href="css/index.css">
     <title>iCubo</title>
 </head>
@@ -17,7 +18,6 @@
 -->
 
 <body >
-
     <div class="barraNav" id="navegador"  >
         <div class="navBloques" id="navEspacioIzq">
         </div>
@@ -47,6 +47,35 @@
             Menu
         </div>
     </div>
+
+    <div id="popupDonacion" class="popup">
+        <div class="contenidoPopup">
+          <div class="itemsPopup" id="tituloPopup"> Participa en iCubo</div>
+          <div class="itemsPopup">
+            <div> Monto de donación</div>
+            <input id="montoPopup" type="number" name="montoPopup" placeholder="Monto"></input>
+          </div>
+          <div class="itemsPopup">
+            <div> Nombre</div>
+            <input id="nombrePopup" type="text" name="nombrePopup" placeholder="Nombre"></input>
+          </div>
+          <div class="itemsPopup">
+            <div>Dejanos tu comentario</div>
+            <textarea id="comentarioPopup" name="comentarioPopup" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div id="botonesPopup">
+            <div>
+                <button class="botonPopup" onclick="agregarDonacion()">Aceptar</button>
+            </div>
+            <div>
+                <button class="botonPopup" onclick="salirPopup()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+
     <div id="cabecera" >
         <div id="cabTitulo">
             iCubo
@@ -146,17 +175,7 @@
                     Opiniones
                 </div>
                 <div class="entradaOpiniones" id="opinionesContenido">
-                    <div class="itemHistorialDonaciones">
-                        <div class="iconoItemDonacion"></div>
-                        <div class="contenidoItemDonacion">
-                            <div class="nombreDonante"> José Luis</div>
-                            <div class="montoFechaDonante">
-                                <div class="montoDonante">$50</div>
-                                <div class="fechaDonante">3d</div>
-                            </div>
-                            <div class="opinion">Excelente proyecto!</div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -166,8 +185,8 @@
                     iCubo
                 </div>
                 <div class="itemsDonaciones" id="infoDonaciones">
-                    <div>
-                        $X
+                    <div id="donacionesActulizado">
+                        $0
                     </div>
                     <div>
                         de
@@ -180,8 +199,9 @@
                     <div class="barraProgreso" id="barraCompletado"></div>
                     <div class="barraProgreso" id="barraPendiente"></div>
                 </div>
-                <div class="itemsDonaciones">
-                    X Donaciones
+                <div class="itemsDonaciones" id="conteoDonaciones">
+                    <div id="conteoDonacionesNum"> 0</div>
+                    <div> Donaciones</div>
                 </div>
                 <div class="itemsDonaciones">
                     Fecha cierre: 19/2/2023
@@ -193,22 +213,13 @@
                     <input type="text" name="inputDonacion" value="" placeholder="Donación" id="montoDonacion">
                 </div>
                 <div class="itemsDonaciones">
-                    <button id="botonDonar"> Donar</button>
+                    <button id="botonDonar" onclick="aparecePopup()"> Donar</button>
                 </div>
                 <div class="itemsDonaciones">
                     Donaciones
                 </div>
                 <div class="entradaDonaciones" id="ultimasDonaciones">
-                    <div class="itemHistorialDonaciones">
-                        <div class="iconoItemDonacion"></div>
-                        <div class="contenidoItemDonacion">
-                            <div class="nombreDonante"> José Luis</div>
-                            <div class="montoFechaDonante">
-                                <div class="montoDonante">$50</div>
-                                <div class="fechaDonante">3d</div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -228,7 +239,7 @@
                 Legal
             </div>
         </div>
-    </div>
+</div>
 
 </body>
 </html>
