@@ -62,6 +62,8 @@ function agregarDonacion() {
     </div>
     `;
 
+    HTML_Donacion.unshift 
+
     HTML_Comentario += `
         <div class="itemHistorialDonaciones">
             <div class="iconoItemDonacion"></div>
@@ -76,8 +78,11 @@ function agregarDonacion() {
         </div>
     `;
 
-    document.getElementById("ultimasDonaciones").innerHTML += HTML_Donacion;
-    document.getElementById("opinionesContenido").innerHTML += HTML_Comentario;
+    var itemsDonaciones = document.getElementById("ultimasDonaciones").innerHTML;
+    var itemsComentarios = document.getElementById("opinionesContenido").innerHTML;
+
+    document.getElementById("ultimasDonaciones").innerHTML = HTML_Donacion + itemsDonaciones;
+    document.getElementById("opinionesContenido").innerHTML = HTML_Comentario + itemsComentarios;
     document.getElementById("donacionesActulizado").innerHTML = '$' + monto_total;
     document.getElementById("conteoDonacionesNum").innerHTML = cont_donaciones;
 
