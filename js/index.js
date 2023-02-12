@@ -1,9 +1,10 @@
-
+// Función en la que aparece el Pop Up
 function aparecePopup() {
     document.getElementById("popupDonacion").style.display = "block";
     document.getElementById("montoPopup").value = document.getElementById("montoDonacion").value;
 }
 
+//Función para salir del Pop Up y restablecer los valores de los inputs
 function salirPopup() {
     document.getElementById("popupDonacion").style.display = "none";
     document.getElementById("montoPopup").value = null;
@@ -12,10 +13,14 @@ function salirPopup() {
         document.getElementById("montoDonacion").value = null;
 }
 
+//Variables globales para llevar la cuenta del progreso y las donaciones
 let monto_total = 0;
 let cont_donaciones = 0;
 let progreso = 0;
 
+//Funcion en la que se agrega una donación. En esta función se le imponen 
+//algunas condicones al monto de donación y es que sea un número y este sea
+//mayor que 0, ademas de ser un numero entero.
 function agregarDonacion() {
 
     var HTML_Donacion = '';
@@ -83,7 +88,4 @@ function agregarDonacion() {
         document.getElementById("popupDonacion").style.display = "none";
 
     }
-
-
-
 }
