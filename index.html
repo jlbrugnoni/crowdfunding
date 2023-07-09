@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
     <title>iCubo</title>
 </head>
 <!--
@@ -13,36 +15,67 @@
     3: #595959
     4: #262626
     5: #0D0D0D
-  
-
 -->
 
-<body style="background-color: #F2F2F2; margin: 0px;">
-
-    <div class="barraNav" id="navegador" style="background-color: #262626; position: fixed; width: 100%;" >
-        <div class="navBloques">
-            <div class="navEnlaces" style="color:#D9D9D9">
+<body >
+    <!-- Sección de barra superior-->
+    <div class="barraNav" id="navegador"  >
+        <div class="navBloques" id="navEspacioIzq">
+        </div>
+        <div class="navBloques" id="enlacesCabeceraIzq">
+            <div class="navEnlaces">
                 Proyectos
             </div>
-            <div class="navEnlaces" style="color:#D9D9D9">
+            <div class="navEnlaces" >
                 Comienza un proyecto
             </div>
         </div>
-        <div class="navBloques" style="color:#D9D9D9">
+        <div class="navBloques" id="nombrePagina" >
             Seek & Fund
         </div>
-        <div class="navBloques">
-            <div class="navEnlaces" style="color:#D9D9D9">
+        <div class="navBloques" id="enlacesCabeceraDer">
+            <div class="navEnlaces" >
                 Nosotros
             </div>
-            <div class="navEnlaces" style="color:#D9D9D9">
+            <div class="navEnlaces" >
                 Ayuda
             </div>
-            <div class="navEnlaces" style="color:#D9D9D9">
+            <div class="navEnlaces" >
                 Login
             </div>
         </div>
+        <div class="navEnlaces" id="navMenu">
+            Menu
+        </div>
     </div>
+    <!-- Sección de Pop Up-->
+    <div id="popupDonacion" class="popup">
+        <div class="contenidoPopup">
+          <div class="itemsPopup" id="tituloPopup"> Participa en iCubo</div>
+          <div class="itemsPopup">
+            <div> Monto de donación</div>
+            <input id="montoPopup" type="number" name="montoPopup" placeholder="Monto"></input>
+          </div>
+          <div class="itemsPopup">
+            <div> Nombre</div>
+            <input id="nombrePopup" type="text" name="nombrePopup" placeholder="Nombre"></input>
+          </div>
+          <div class="itemsPopup">
+            <div>Dejanos tu comentario</div>
+            <textarea id="comentarioPopup" name="comentarioPopup" id="" cols="30" rows="10"></textarea>
+          </div>
+          <div id="botonesPopup">
+            <div>
+                <button class="botonPopup" onclick="agregarDonacion()">Aceptar</button>
+            </div>
+            <div>
+                <button class="botonPopup" onclick="salirPopup()">Cancelar</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Sección de cabecera de la página-->
     <div id="cabecera" >
         <div id="cabTitulo">
             iCubo
@@ -50,11 +83,16 @@
         <div>
             Te relaja, simplemente
         </div>
+        <div class="barraSeparacion" id="barraSeparacion1">
+        </div>
     </div>
+    <!-- Sección del contenedor de la pagina. Flex principal-->
     <div id="cuerpo">
+        <!-- Sección de contenedor de la descripción de la página-->
         <div id="descripcion">
             <div class="descripcionBloque">
                 <img 
+                class="fotos"
                 id="foto1"
                 src="imagenes/icubo1.jpg"
                 />
@@ -67,6 +105,8 @@
                     <div id="infoDescripcion">
                         Este pequeño pero poderoso dispositivo te ayuda a calmar la ansiedad y potencia tu concentración en tareas en las que se requiere mantener el enfoque.
                     </div>
+                </div>
+                <div class="barraSeparacion" id="barraSeparacion2">
                 </div>
                 <div id="infoEconomica">
                     <div id="infoCreadoresTitulo">
@@ -85,12 +125,13 @@
             </div>
             <div class="descripcionBloque">
                 <img 
+                class="fotos"
                 id="foto2"
                 src="imagenes/icubo2.gif"
                 />
             </div>
             <div class="descripcionBloque" id="intro">
-                <div id="detalleTitulo">
+                <div class="seccionTitulo" id="detalleTitulo">
                     ¿Qué es iCubo?
                 </div>
                 <div id="detalle">
@@ -99,81 +140,107 @@
             </div>
             <div class="descripcionBloque">
                 <img 
+                class="fotos"
                 id="foto4"
                 src="imagenes/icubo5.jpg"
                 />
             </div>
             <div class="descripcionBloque">
-                iCubo cuenta con:
-                - 5 botones, 3 con sonido y 2 silenciosos
-                - 1 joystick
-                - 1 interruptor con sonido
-                - 3 ruedas sin sonido
-                - 1 boton esferico
-                - 1 interruptor
-                - 1 muesca de relajación
+                <div class="seccionTitulo">
+                    ¿Con qué cuenta iCubo?
+                </div>
+                <div class="listaComposicion">
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Botones con sonido y sin sonido</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion"> Rueda giratoria</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Bola roll-on y ruletas</span>
+                    </div>
+                </div>
+                <div class="listaComposicion">
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Joystick 360 grados</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Interruptor con sonido</span>
+                    </div>
+                    <div class="itemListaComposicion">
+                        <span class="contenidoListaComposicion">Relieve relajante para respiracion</span>
+                    </div>
+                </div>
             </div>
             <div class="descripcionBloque" id="opiniones">
-                <div id="opinionesTitulo">
+                <div class="seccionTitulo" id="opinionesTitulo">
                     Opiniones
                 </div>
-                <div id="opinionesContenido">
-                    En este div irán contenidas las opiniones de los diferentes usuarios
+                <div class="entradaOpiniones" id="opinionesContenido">
                 </div>
             </div>
         </div>
+        <!-- Sección de contenedor del bloque de donación-->
         <div id="bloqueDonacion">
-            <div id="donacionTitulo">
-                iCubo
-            </div>
-            <div id="infoDonaciones">
-                <div>
-                    $X
+            <div id="cajaDonacion">
+                <div id="donacionTitulo">
+                    iCubo
                 </div>
-                <div>
-                    de
+                <div class="itemsDonaciones" id="infoDonaciones">
+                    <div id="donacionesActulizado">
+                        $0
+                    </div>
+                    <div>
+                        de
+                    </div>
+                    <div>
+                        $19,000
+                    </div>
                 </div>
-                <div>
-                    $19,000
+                <div id="barraCarraProgresoDonaciones">
+                    <div class="barraProgreso" id="barraCompletado"></div>
+                    <div class="barraProgreso" id="barraPendiente"></div>
+                </div>
+                <div class="itemsDonaciones" id="conteoDonaciones">
+                    <div id="conteoDonacionesNum"> 0</div>
+                    <div> Donaciones</div>
+                </div>
+                <div class="itemsDonaciones">
+                    Fecha cierre: 19/2/2023
+                </div>
+                <div class="itemsDonaciones">
+                    Participar en el proyecto:
+                </div>
+                <div class="itemsDonaciones">
+                    <input type="text" name="inputDonacion" value="" placeholder="Donación" id="montoDonacion">
+                </div>
+                <div class="itemsDonaciones">
+                    <button id="botonDonar" onclick="aparecePopup()"> Donar</button>
+                </div>
+                <div class="itemsDonaciones">
+                    Donaciones
+                </div>
+                <div class="entradaDonaciones" id="ultimasDonaciones">
                 </div>
             </div>
-            <div>
-                X Donaciones
-            </div>
-            <div>
-                Fecha cierre: 19/2/2023
-            </div>
-            <div>
-                Participar en el proyecto:
-            </div>
-            <div>
-                <input type="text" name="" value="" placeholder="Introducir nombre" width="200px" size="36">
-            </div>
-            <div>
-                <button> Donar</button>
-            </div>
-            <div>
-                En este div irán las ultimas 5 donaciones
-            </div>
-
         </div>
     </div>
-    <div class="barraNav" id="footer" style="background-color: #262626; width: 100%;" >
-        <div class="navBloques" id="infoLegal" style="color:#D9D9D9">
+    <!-- Sección de barra inferior-->
+    <div class="barraNav" id="footer" >
+        <div class="navBloques" id="infoLegal" >
             © 2022-2023<!-- --> <!-- -->Seek & Fund
         </div>
         <div class="navBloques" id="footerEnlaces">
-            <div class="navEnlaces" style="color:#D9D9D9">
+            <div class="navEnlaces" >
                 Terms
             </div>
-            <div class="navEnlaces" style="color:#D9D9D9">
+            <div class="navEnlaces" >
                 Privacy
             </div>
-            <div class="navEnlaces" style="color:#D9D9D9">
+            <div class="navEnlaces" >
                 Legal
             </div>
         </div>
-    </div>
-
+</div>
 </body>
 </html>
